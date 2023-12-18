@@ -16,7 +16,7 @@ const sequelize = new Sequelize({
   host: 'localhost', // database host
   username: 'root', // database username
   password: 'atkababy', // database password
-  database: 'ecommerce_db', //  database name
+  database: 'ecommerce_db' //  database name
 });
 
 // Define your models and associations here
