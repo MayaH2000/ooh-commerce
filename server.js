@@ -19,12 +19,12 @@ const sequelize = new Sequelize({
   database: 'ecommerce_db' //  database name
 });
 
-// Define your models and associations here
+// Define models and associations here
 
-// Import your Sequelize models
+// Import Sequelize models
 const { Product, Category, Tag, ProductTag } = require('./models');
 
-// Define your associations (relationships) between models
+// Define  associations (relationships) between models
 Product.belongsTo(Category, {
   foreignKey: 'category_id',
 });
