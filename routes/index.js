@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
+const mysql = require('mysql');
 
 // Create a connection to the database
 const connection = mysql.createConnection({
