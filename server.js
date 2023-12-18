@@ -21,6 +21,29 @@ const sequelize = new Sequelize({
 
 // Define your models and associations here
 
+// Import your Sequelize models
+const { Product, Category, Tag, ProductTag } = require('./models');
+
+// Define your associations (relationships) between models
+Product.belongsTo(Category, {
+  foreignKey: 'category_id',
+});
+
+Category.hasMany(Product, {
+  foreignKey: 'category_id',
+});
+
+Product.belongsToMany(Tag, {
+  through: ProductTag,
+  foreignKey: 'product_id',
+});
+
+Tag.belongsToMany(Product, {
+  through: ProductTag,
+  foreignKey: 'tag_id',
+});
+
+
 // Sync sequelize models to the database, then turn on the server
 sequelize.sync({ force: false }) 
   .then(() => {
