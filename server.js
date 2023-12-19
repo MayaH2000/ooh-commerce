@@ -21,7 +21,7 @@ const sequelize = new Sequelize({
 
 // Define models and associations here
 
-// Import Sequelize models
+// Import your Sequelize models
 const { Product, Category, Tag, ProductTag } = require('./models');
 
 // Define  associations (relationships) between models
